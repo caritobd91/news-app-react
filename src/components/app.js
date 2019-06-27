@@ -12,4 +12,14 @@ export default class App extends React.Component {
     this.state = { articles: [], refreshing: true};
     this.fetchNews = this.fetchNews.bind(this);
   }
+
+  componentDidMount() {
+    this.fetchNews();
+  }
+
+  fetchNews() {
+    getNews.then(
+      articles => this.setState({articles, refreshing = false })
+      ).catch(() => this.setState({ refreshing: false }));
+  }
 }
