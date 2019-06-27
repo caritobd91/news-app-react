@@ -22,4 +22,8 @@ export default class App extends React.Component {
       articles => this.setState({articles, refreshing = false })
       ).catch(() => this.setState({ refreshing: false }));
   }
+
+  handleRefresh() {
+    this.setState({ refreshing: true }, () => this.fetchNews());
+  }
 }
