@@ -3,5 +3,7 @@ const url =
 
 export async function getNews() {
   let result = await fetch(url).then(response => response.json());
+
+  console.log(result);
   return result.articles;
 }
