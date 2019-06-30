@@ -18,17 +18,18 @@ const url =
 
     componentWillMount() {
       this.getNews().then(
-        news =>
-          this.setState({articles: news.map((item, key) =>
-            <li key={item.title}>{item.title} by {item.author}</li>
-          )}));
+        news => this.setState({articles: news})
+      );
     }
 
     render() {
       return (
-        <ul>
-          {this.state.articles}
-        </ul>
+        this.state.articles.map((article, key) =>
+          <div key={ article.title }>
+            <h1>{ article.title }</h1>
+            <p>{ article.description }</p>
+          </div>
+        )
       );
     }
   }
