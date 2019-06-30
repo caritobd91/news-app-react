@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const url = "https://api.darksky.net/forecast/1d67db599e3f019a24aeb1dfd367f9fd/37.8267,-122.4233";
+const url = "http://api.openweathermap.org/data/2.5/weather?id=4299276&APPID=6ca05d91658fd6349adc797a8d6acb2a&units=imperial";
 
 class Weather extends Component {
   constructor() {
@@ -9,27 +9,28 @@ class Weather extends Component {
   }
 
   async getWeather() {
-    let result = await fetch(url, {
-      mode: "no-cors"
-    }).then(response => response.json())
-    .catch(() => {
-      console.log("Could not access Dark Sky.")
+    let result = await fetch(url)
+    .then(response => response.json())
+    .catch((error) => {
+      console.log(error);
     });
 
     console.log(result);
-    return result.weather;
+    return result;
   }
 
   componentWillMount() {
     this.getWeather().then(
-      forecast => this.setState({weather: forecast})
+      forecast => {
+        this.setState({weather: forecast.main})
+      }
     );
   }
 
   render() {
     return (
-      <div></div>
-    )
+      <div>{ this.state.weather.temp }</div>
+    );
   }
 }
 
