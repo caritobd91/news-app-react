@@ -6,7 +6,7 @@ const url =
   class News extends Component {
     constructor() {
       super();
-      this.state = { articles: [] };
+      this.state = { articles: [], displayedArticles: [] };
     }
 
     async getNews() {
@@ -16,20 +16,44 @@ const url =
       return result.articles;
     }
 
-    componentWillMount() {
+    async componentWillMount() {
       this.getNews().then(
         news => this.setState({articles: news})
-      );
+      ).then(() => {
+        this.setDisplayedArticles();
+      });
+    }
+
+    hasNewsLimit() {
+      return this.props.newsLimit > 0;
+    }
+
+    setDisplayedArticles() {
+      if (this.hasNewsLimit()) {
+        this.setState({displayedArticles: this.state.articles.slice(0, this.props.newsLimit)});
+      }
+      else {
+        this.setState({displayedArticles: this.state.articles});
+      }
+    }
+
+    showAllArticles = () => {
+      this.setState({ displayedArticles: this.state.articles})
     }
 
     render() {
+      console.log('displayed articles ', this.state.displayedArticles);
       return (
-        this.state.articles.map((article, key) =>
-          <div key={ article.title }>
+        <div>
+        {this.state.displayedArticles.map((article, key) =>
+          <div className="news" key={ article.title }>
+            <div className="news-image" style={{backgroundImage: `url(${article.urlToImage})`}}></div>
             <h1>{ article.title }</h1>
             <p>{ article.description }</p>
           </div>
-        )
+        )}
+        <button className="button-all" onClick={this.showAllArticles}>See All Articles</button>
+        </div>
       );
     }
   }
