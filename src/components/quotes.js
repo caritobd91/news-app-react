@@ -28,7 +28,8 @@ const url = "https://favqs.com/api/qotd";
     render() {
       return (
         <div>
-          <h3>{ this.state.quotes.body }</h3>
+          <h3>{ '"' + this.state.quotes.body + '"'}</h3>
+          <p className="author">{'— ' + this.state.quotes.author}</p>
         </div>
       );
     }
