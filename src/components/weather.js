@@ -29,7 +29,9 @@ class Weather extends Component {
 
   render() {
     return (
-      <div>{ this.state.weather.temp }</div>
+      <div>
+        <h2>{ this.state.weather.temp + ' F' }</h2>
+      </div>
     );
   }
 }
