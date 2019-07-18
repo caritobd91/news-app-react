@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #313233;
+  position: fixed;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+
+.headline {
+  padding-left: 4rem;
+  color: white;
+}

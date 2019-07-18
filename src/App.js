@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import './css/news.css'
+import './css/header.css'
+import './css/weather.css'
+import './css/quote.css'
 import News from './components/news';
 import Weather from './components/weather';
 import Quotes from './components/quotes';
@@ -8,9 +12,13 @@ import Quotes from './components/quotes';
   render() {
     return (
       <div className="App">
-        <Weather />
-        <News />
-        <Quotes />
+        <header>
+          <h1 class="headline">Top News</h1>
+          <div class="weather"><Weather /></div>
+        </header>
+
+        <div class="articles"><News newsLimit={3} /></div>
+        <div class="quotes"><Quotes /></div>
       </div>
     );
   }
