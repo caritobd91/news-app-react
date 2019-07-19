@@ -6,7 +6,7 @@ const url =
   class News extends Component {
     constructor() {
       super();
-      this.state = { articles: [], displayedArticles: [] };
+      this.state = { articles: [], displayedArticles: [], isOpen: false };
     }
 
     async getNews() {
@@ -30,15 +30,24 @@ const url =
 
     setDisplayedArticles() {
       if (this.hasNewsLimit()) {
-        this.setState({displayedArticles: this.state.articles.slice(0, this.props.newsLimit)});
+        this.setState({isOpen: false, displayedArticles: this.state.articles.slice(0, this.props.newsLimit)});
       }
       else {
         this.setState({displayedArticles: this.state.articles});
       }
     }
 
-    showAllArticles = () => {
-      this.setState({ displayedArticles: this.state.articles})
+    toggleArticles = () => {
+      if (!this.state.isOpen)
+        this.setState({ displayedArticles: this.state.articles, isOpen: true });
+      else {
+        this.setDisplayedArticles();
+        window.scrollTo(0, 0);
+      }
+    }
+
+    toggleArticlesButtonText = () => {
+      return this.state.isOpen ? 'See Less Articles' : 'See All Articles';
     }
 
     render() {
@@ -52,10 +61,11 @@ const url =
             <p>{ article.description }</p>
           </div>
         )}
-        <button className="button-all" onClick={this.showAllArticles}>See All Articles</button>
+        <button className="button-all" onClick={this.toggleArticles}>{this.toggleArticlesButtonText()}</button>
         </div>
       );
     }
   }
+
 
   export default News;
