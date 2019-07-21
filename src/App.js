@@ -4,6 +4,7 @@ import './css/news.css'
 import './css/header.css'
 import './css/weather.css'
 import './css/quote.css'
+import Apple from './components/apple';
 import News from './components/news';
 import Weather from './components/weather';
 import Quotes from './components/quotes';
@@ -18,7 +19,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
         <div className="App">
         <div>
           <header>
-          <h1 className="headline">Top News</h1>
+          <h1 className="headline">Top US News</h1>
         <nav>
           <ul>
             <li>
@@ -28,7 +29,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
               <Link to="/wallstreet/">Wallstreet Journal</Link>
             </li>
             <li>
-              <Link to="/users/">Users</Link>
+              <Link to="/apple/">Apple News</Link>
             </li>
           </ul>
         </nav>
@@ -43,8 +44,12 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
           </div>
           )
         } />
-        <Route path="/wallstreet/" exact component={() =>  <Wallstreet newsLimit={3}/>} />
-        <Route path="/users/" render={() => <div className="articles">contact us never</div>} />
+        <Route path="/wallstreet/" exact component={() =>  (
+          <div className="articles"><Wallstreet newsLimit={3}/></div>
+        )} />
+        <Route path="/apple/" exact component={() => (
+          <div className="articles"><Apple newsLimit={3}/></div>
+        )} />
       </div>
 
 
