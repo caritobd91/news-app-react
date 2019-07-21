@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Article from './article';
 
 const url = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=cb83495bb9724d3c80337804facdd7de"
 
@@ -52,20 +52,17 @@ class Wallstreet extends Component {
 
   render() {
     console.log('displayed articles ', this.state.displayedArticles);
-    return(
+    return (
       <div>
-        <div className="articles">
-          {this.state.displayedArticles.map((article, key) =>
-            <div className="news" key={ article.title }>
-              <div className="news-image" style={{backgroundImage: `url(${article.urlToImage})`}}></div>
-              <h1>{ article.title }</h1>
-              <p>{ article.description }</p>
-            </div>
-          )}
-        </div>
+        {this.state.displayedArticles.map((article, index) =>
+          <Article
+            article={article}
+            key={index}
+          />
+        )}
         <button className="button-all" onClick={this.toggleArticles}>{this.toggleArticlesButtonText()}</button>
-        </div>
-    )
+      </div>
+    );
   }
 }
 
