@@ -67,5 +67,4 @@ const url =
     }
   }
 
-
   export default News;
