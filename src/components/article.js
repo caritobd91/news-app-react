@@ -13,10 +13,10 @@ class Article extends Component {
   render() {
     return (
       <div>
-        <div className="news" key={ this.article.title }>
-          <div className="news-image" style={{backgroundImage: `url(${this.article.urlToImage})`}}></div>
-          <h1>{ this.article.title }</h1>
-          <p>{ this.article.description }</p>
+        <div className="news">
+          <div className="news-image" style={{backgroundImage: `url(${this.props.article.urlToImage})`}}></div>
+          <h1>{ this.props.article.title }</h1>
+          <p>{ this.props.article.description }</p>
         </div>
       </div>
     );
