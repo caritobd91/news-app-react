@@ -4,3 +4,12 @@
   padding-right: 4rem;
   color: white;
 }
+
+.icon {
+  padding-left: .5rem;
+}
+
+.city {
+  padding-left: .5rem;
+  font-size: .9rem;
+}

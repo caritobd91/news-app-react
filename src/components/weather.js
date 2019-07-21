@@ -5,7 +5,7 @@ const url = "http://api.openweathermap.org/data/2.5/weather?id=4299276&APPID=6ca
 class Weather extends Component {
   constructor() {
     super();
-    this.state = { weather: [], icon: '' };
+    this.state = { weather: [], icon: '', city: ''};
   }
 
   async getWeather() {
@@ -24,7 +24,8 @@ class Weather extends Component {
       forecast => {
         this.setState({
           weather: forecast.main,
-          icon: forecast.weather[0].icon
+          icon: forecast.weather[0].icon,
+          city: forecast.name
         })
       }
     );
@@ -32,9 +33,10 @@ class Weather extends Component {
 
   render() {
     return (
-      <div>
-        <h2>{ this.state.weather.temp + ' F' }</h2>
-        <img alt="weather icon" src={`http://openweathermap.org/img/wn/${this.state.icon}.png`} />
+      <div className="weather">
+        <h2>{ this.state.weather.temp + '°F' }</h2>
+        <img className="icon" alt="weather icon" src={`http://openweathermap.org/img/wn/${this.state.icon}.png`} />
+        <p className="city">{ this.state.city + ', KY'}</p>
       </div>
     );
   }

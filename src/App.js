@@ -33,7 +33,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
             </li>
           </ul>
         </nav>
-        <div className="weather"><Weather /></div>
+        <div><Weather /></div>
 
         </header>
 
