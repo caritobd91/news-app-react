@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import Article from './article';
 
 const url =
-  "https://newsapi.org/v2/top-headlines?country=us&apiKey=cb83495bb9724d3c80337804facdd7de";
+  "https://newsapi.org/v2/everything?q=apple&from=2019-07-18&to=2019-07-18&sortBy=popularity&apiKey=cb83495bb9724d3c80337804facdd7de";
 
-  class News extends Component {
+  class Apple extends Component {
     constructor() {
       super();
       this.state = { articles: [], displayedArticles: [], isOpen: false };
     }
 
-    async getNews() {
+    async getAppleNews() {
       let result = await fetch(url).then(response => response.json());
 
       console.log(result);
@@ -18,7 +18,7 @@ const url =
     }
 
     async componentWillMount() {
-      this.getNews().then(
+      this.getAppleNews().then(
         news => this.setState({articles: news})
       ).then(() => {
         this.setDisplayedArticles();
@@ -67,4 +67,5 @@ const url =
     }
   }
 
-  export default News;
+
+  export default Apple;
