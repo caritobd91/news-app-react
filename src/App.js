@@ -9,7 +9,7 @@ import News from './components/news';
 import Weather from './components/weather';
 import Quotes from './components/quotes';
 import Wallstreet from './components/wallstreet';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
 
  class App extends Component {
@@ -23,13 +23,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/wallstreet/">Wallstreet Journal</Link>
+              <NavLink to="/wallstreet/">Wallstreet Journal</NavLink>
             </li>
             <li>
-              <Link to="/apple/">Apple News</Link>
+              <NavLink to="/apple/">Apple News</NavLink>
             </li>
           </ul>
         </nav>

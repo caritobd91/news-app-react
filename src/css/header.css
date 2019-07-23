@@ -31,13 +31,22 @@ nav ul li:focus {
   outline: none;
 }
 
+nav ul a {
+  color: white;
+  opacity: .6;
+}
+
 nav ul li {
   margin-right: 2rem;
-  opacity: .6;
   transition: all ease .5s;
   font-weight: 700;
 }
 
-nav ul li:hover {
+nav ul a:hover {
+  opacity: 1;
+}
+
+nav ul li .active {
+  color: white;
   opacity: 1;
 }
