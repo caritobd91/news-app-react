@@ -71,3 +71,22 @@
 .button-all:focus {
   outline: none;
 }
+
+@media (max-width: 800px) {
+  .news {
+    display: block;
+  }
+
+  .news h1 {
+    margin-top: 2rem;
+    max-width: 35rem;
+  }
+
+  .news-image {
+    width: 100%;
+  }
+
+  .articles {
+    padding-top: 12rem;
+  }
+ }

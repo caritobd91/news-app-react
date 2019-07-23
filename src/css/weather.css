@@ -3,6 +3,7 @@
   align-items: center;
   padding-right: 4rem;
   color: white;
+  height: 100%;
 }
 
 .icon {
@@ -12,4 +13,20 @@
 .city {
   padding-left: .5rem;
   font-size: .9rem;
+}
+
+@media (max-width: 800px) {
+  .city {
+    display: none;
+  }
+
+  .weather {
+    justify-content: center;
+    padding-right: 0;
+    padding-bottom: .5rem;
+  }
+
+  .weather h2 {
+    font-size: 1rem;
+  }
 }
