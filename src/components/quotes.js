@@ -19,7 +19,7 @@ const url = "https://favqs.com/api/qotd";
       return result;
     }
 
-    componentWillMount() {
+    componentDidMount() {
       this.getQuotes().then(
         quote => this.setState({quotes: quote.quote})
       );

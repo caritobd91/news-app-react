@@ -17,7 +17,7 @@ const url =
       return result.articles;
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
       this.getAppleNews().then(
         news => this.setState({articles: news})
       ).then(() => {

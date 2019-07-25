@@ -16,7 +16,7 @@ class Wallstreet extends Component {
     return result.articles;
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     this.getWallstreet().then(
       article => this.setState({articles: article})
     ).then(() => {

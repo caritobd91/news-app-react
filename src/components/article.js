@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// This component is used in all news pages since they use the same markup and data structure
+
 class Article extends Component {
   constructor() {
     super();

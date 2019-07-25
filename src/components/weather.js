@@ -19,7 +19,7 @@ class Weather extends Component {
     return result;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getWeather().then(
       forecast => {
         this.setState({

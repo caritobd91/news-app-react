@@ -17,7 +17,7 @@ const url =
       return result.articles;
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
       this.getNews().then(
         news => this.setState({articles: news})
       ).then(() => {
@@ -25,10 +25,12 @@ const url =
       });
     }
 
+    // Created this method to check length of articles
     hasNewsLimit() {
       return this.props.newsLimit > 0;
     }
 
+    // In the App, each news component has a prop that specifies the news limit to show only 3 at first and all of them when "see all articles" button is clicked.
     setDisplayedArticles() {
       if (this.hasNewsLimit()) {
         this.setState({isOpen: false, displayedArticles: this.state.articles.slice(0, this.props.newsLimit)});
@@ -38,6 +40,7 @@ const url =
       }
     }
 
+    // This function toggles the articles from the limit set by the prop, to all.
     toggleArticles = () => {
       if (!this.state.isOpen)
         this.setState({ displayedArticles: this.state.articles, isOpen: true });
@@ -47,6 +50,7 @@ const url =
       }
     }
 
+    // This function toggles the text of the button
     toggleArticlesButtonText = () => {
       return this.state.isOpen ? 'See Less Articles' : 'See All Articles';
     }
