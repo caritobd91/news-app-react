@@ -1,3 +1,5 @@
+This is a news portal app where you can see 3 different endpoints for news. It also displays the louisville current weather and a random quote of the day in the home page.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
