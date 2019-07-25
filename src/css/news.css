@@ -60,6 +60,7 @@
   border: solid 1.2px #7291b0;
   transition: all ease .3s;
   font-weight: 700;
+  margin-bottom: 5rem;
 }
 
 .button-all:hover {

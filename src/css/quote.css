@@ -1,8 +1,8 @@
 .quotes {
-  margin: 5rem 0;
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-bottom: 4rem;
 }
 
 .quotes h3 {
@@ -21,6 +21,6 @@
 
 @media (max-width: 800px) {
   .quotes {
-    margin: 2rem 1rem;
+    margin: 0 1rem 5rem;
   }
 }
