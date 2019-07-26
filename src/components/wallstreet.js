@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Article from './article';
+import Article from './Article';
+
+// This component hits a news api endpoint that returns the news headlines from the wallstreet journal
 
 const url = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=cb83495bb9724d3c80337804facdd7de"
 
@@ -12,7 +14,6 @@ class Wallstreet extends Component {
   async getWallstreet() {
     let result = await fetch(url).then(response => response.json());
 
-    console.log('wall', result);
     return result.articles;
   }
 
@@ -51,7 +52,6 @@ class Wallstreet extends Component {
   }
 
   render() {
-    console.log('displayed articles ', this.state.displayedArticles);
     return (
       <div>
         {this.state.displayedArticles.map((article, index) =>

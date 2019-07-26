@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Article from './article';
+import Article from './Article';
+
+// This component hits a news api endpoint that returns all Apple related news
 
 const url =
   "https://newsapi.org/v2/everything?q=apple&from=2019-07-18&to=2019-07-18&sortBy=popularity&apiKey=cb83495bb9724d3c80337804facdd7de";
@@ -12,8 +14,6 @@ const url =
 
     async getAppleNews() {
       let result = await fetch(url).then(response => response.json());
-
-      console.log(result);
       return result.articles;
     }
 
@@ -47,12 +47,12 @@ const url =
       }
     }
 
+    // This function toggles the button text
     toggleArticlesButtonText = () => {
       return this.state.isOpen ? 'See Less Articles' : 'See All Articles';
     }
 
     render() {
-      console.log('displayed articles ', this.state.displayedArticles);
       return (
         <div>
           {this.state.displayedArticles.map((article, index) =>
@@ -66,6 +66,5 @@ const url =
       );
     }
   }
-
 
   export default Apple;

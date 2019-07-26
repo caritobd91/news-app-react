@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// This component is used in all news pages since they use the same markup and data structure
+// This component is used in all news pages since they use the same markup and data structure. It renders the headline of the article and description
 
 class Article extends Component {
   constructor() {

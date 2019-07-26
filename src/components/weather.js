@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// This component hits a weather api and displays it on the header of the app
+
 const url = "http://api.openweathermap.org/data/2.5/weather?id=4299276&APPID=6ca05d91658fd6349adc797a8d6acb2a&units=imperial";
 
 class Weather extends Component {
@@ -15,7 +17,6 @@ class Weather extends Component {
       console.log(error);
     });
 
-    console.log(result);
     return result;
   }
 

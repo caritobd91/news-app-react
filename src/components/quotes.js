@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// This component hits an api that return a random  quote of the day
+
 const url = "https://favqs.com/api/qotd";
 
   class Quotes extends Component {
@@ -15,7 +17,6 @@ const url = "https://favqs.com/api/qotd";
         console.log(error);
       });
 
-      console.log(result);
       return result;
     }
 

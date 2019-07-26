@@ -4,13 +4,14 @@ import './css/news.css'
 import './css/header.css'
 import './css/weather.css'
 import './css/quote.css'
-import Apple from './components/apple';
-import News from './components/news';
-import Weather from './components/weather';
-import Quotes from './components/quotes';
-import Wallstreet from './components/wallstreet';
-import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import Apple from './components/Apple';
+import News from './components/News';
+import Weather from './components/Weather';
+import Quotes from './components/Quotes';
+import Wallstreet from './components/Wallstreet';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
+// This app renders all news, weather and daily quote components to create a portal where you can get caught up with current news, and allows you to check the weather as well as giving you an inspirational quote of the day
 
  class App extends Component {
   render() {
@@ -51,8 +52,6 @@ import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
           <div className="articles"><Apple newsLimit={3}/></div>
         )} />
       </div>
-
-
         </div>
       </Router>
     );
